@@ -1,0 +1,523 @@
+/* --- Variables & Setup --- */
+:root {
+    --bg-main: #0a0a0c;
+    --bg-card: #141418;
+    --bg-darker: #050506;
+    --text-main: #e0e0e0;
+    --text-muted: #94949e;
+    --accent-cyan: #00ffcc;
+    --accent-glow: rgba(0, 255, 204, 0.4);
+    
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-main);
+    transition: 0.3s ease;
+}
+
+.highlight {
+    color: var(--accent-cyan);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.bg-darker {
+    background-color: var(--bg-darker);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+/* --- Navigation --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: rgba(10, 10, 12, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 255, 204, 0.1);
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--accent-cyan);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a:hover {
+    color: var(--accent-cyan);
+}
+
+.btn-nav {
+    border: 1px solid var(--accent-cyan);
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: var(--accent-cyan) !important;
+}
+
+.btn-nav:hover {
+    background: var(--accent-cyan);
+    color: var(--bg-main) !important;
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* --- Hero Section --- */
+#hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    /* Subtle tech grid background */
+    background-image: 
+        linear-gradient(rgba(10, 10, 12, 0.8), rgba(10, 10, 12, 0.95)),
+        linear-gradient(var(--accent-glow) 1px, transparent 1px),
+        linear-gradient(90deg, var(--accent-glow) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    background-position: center center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin-top: 60px; /* Offset for fixed nav */
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+.btn-primary {
+    background: var(--accent-cyan);
+    color: var(--bg-main);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    padding: 15px 35px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px var(--accent-cyan);
+}
+
+/* --- About / Split Section --- */
+.split-section {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.text-block {
+    flex: 1;
+}
+
+.text-block h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.text-block p {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.icon-block {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-block i {
+    font-size: 12rem;
+    color: rgba(0, 255, 204, 0.1);
+    text-shadow: 0 0 40px var(--accent-glow);
+}
+
+/* --- Services Section --- */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background: var(--bg-card);
+    padding: 40px 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s ease;
+    border-top: 3px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-top: 3px solid var(--accent-cyan);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: #1a1a20;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--accent-cyan);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* --- Lab Gallery --- */
+.subtitle {
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-item {
+    background: var(--bg-card);
+    height: 250px;
+    border-radius: 8px;
+    border: 1px dashed rgba(0, 255, 204, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.gallery-item:hover {
+    border-style: solid;
+    border-color: var(--accent-cyan);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--bg-darker);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Design (Mobile & Tablet) --- */
+@media (max-width: 900px) {
+    .split-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .grid-3, .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* A hamburger menu would go here for a complex site, but we keep it simple */
+    }
+    
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .grid-3, .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .icon-block i {
+        font-size: 8rem;
+    }
+}
+
+/* --- Before & After Slider --- */
+.before-after-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 450px; /* Adjust this based on your image aspect ratio */
+    margin: 0 auto;
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Base styling for both images */
+.before-after-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Prevents images from blocking the slider */
+}
+
+/* The 'Before' image container that gets resized */
+.img-before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%; /* Starts exactly in the middle */
+    height: 100%;
+    overflow: hidden;
+    border-right: 2px solid var(--accent-cyan);
+    z-index: 2;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* The invisible input range overlaid on top */
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    background: transparent;
+    -webkit-appearance: none;
+    appearance: none;
+    z-index: 4;
+    margin: 0;
+    cursor: ew-resize;
+}
+
+/* Hide the default HTML range thumb */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 4px;
+    height: 100%;
+    background: transparent;
+}
+.slider::-moz-range-thumb {
+    width: 4px;
+    height: 100%;
+    background: transparent;
+    border: none;
+}
+
+/* The visual custom handle (the circle with arrows) */
+.slider-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: var(--bg-main);
+    border: 2px solid var(--accent-cyan);
+    border-radius: 50%;
+    color: var(--accent-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; /* Lets clicks pass through to the invisible slider */
+    z-index: 3;
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* Labels ("Before" & "After") */
+.label {
+    position: absolute;
+    bottom: 20px;
+    padding: 6px 16px;
+    background: rgba(10, 10, 12, 0.85);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    z-index: 3;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+}
+
+.label-before {
+    left: 20px;
+}
+
+.label-after {
+    right: 20px;
+}
+
+/* Mobile Adjustment for the slider height */
+@media (max-width: 768px) {
+    .before-after-container {
+        height: 250px;
+    }
+}
+
+/* --- Trust Bar Styling --- */
+.trust-bar {
+    background: var(--accent-cyan);
+    color: var(--bg-main);
+    padding: 15px 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.trust-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.trust-item i {
+    margin-right: 8px;
+}
+
+/* Make it pop on mobile */
+@media (max-width: 768px) {
+    .trust-items {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* --- FAQ Styling --- */
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.faq-item h3 {
+    color: var(--accent-cyan);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--accent-cyan);
+    padding-left: 15px;
+}
+
+.faq-item p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    padding-left: 18px;
+}
+
+@media (max-width: 600px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.lang-switch {
+    display: flex;
+    gap: 5px;
+    margin-right: 20px;
+}
+.lang-switch button {
+    background: transparent;
+    border: 1px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    padding: 2px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+.lang-switch button.active {
+    background: var(--accent-cyan);
+    color: var(--bg-main);
+}
+
+/* --- THE NEW LOGIC (Add this below the buttons) --- */
+/* This hides the wrong language based on the body tag */
+body[data-lang="en"] [lang="nl"] { display: none !important; }
+body[data-lang="nl"] [lang="en"] { display: none !important; }
+
+/* Default: If no language is set yet, hide Dutch */
+body:not([data-lang]) [lang="nl"] { display: none !important; }
+
+/* Ensure the buttons themselves never hide */
+.lang-switch button[lang] { display: inline-block !important; }

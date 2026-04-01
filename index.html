@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anas Repair & Services | Precision Micro-Soldering</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ANAS <span>REPAIR</span></div>
+        
+        <div class="lang-switch">
+            <button onclick="setLanguage('en')" id="btn-en" class="active">EN</button>
+            <button onclick="setLanguage('nl')" id="btn-nl">NL</button>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#about"><span lang="en">The Lab</span><span lang="nl">Het Lab</span></a></li>
+            <li><a href="#services"><span lang="en">Services</span><span lang="nl">Diensten</span></a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact" class="btn-nav"><span lang="en">Get a Quote</span><span lang="nl">Offerte</span></a></li>
+        </ul>
+    </nav>
+
+    <header id="hero">
+        <div class="hero-content">
+            <h1 lang="en">Fast, Reliable <span class="highlight">Tech Repairs</span> For Every Device</h1>
+            <h1 lang="nl">Snelle, Betrouwbare <span class="highlight">Reparaties</span> Voor Elk Apparaat</h1>
+            
+            <p lang="en">From cracked iPhone screens to dead Gaming GPUs. We provide professional repairs and advanced micro-soldering with a No-Fix, No-Fee guarantee.</p>
+            <p lang="nl">Van gebarsten iPhone-schermen tot dode GPU's. Wij bieden professionele reparaties en geavanceerd microsolderen met een No-Fix, No-Fee garantie.</p>
+            
+            <a href="#contact" class="btn-primary">
+                <span lang="en">Start Your Repair</span>
+                <span lang="nl">Start Je Reparatie</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="trust-bar">
+        <div class="container">
+            <div class="trust-items">
+                <div class="trust-item"><i class="fa-solid fa-check-shield"></i> <span lang="en">No Fix, No Pay Guarantee</span><span lang="nl">No Cure, No Pay Garantie</span></div>
+                <div class="trust-item"><i class="fa-solid fa-microscope"></i> <span lang="en">Advanced Micro-Diagnostics</span><span lang="nl">Geavanceerde Micro-Diagnostiek</span></div>
+                <div class="trust-item"><i class="fa-solid fa-bolt"></i> <span lang="en">Fast Turnaround</span><span lang="nl">Snelle Service</span></div>
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="container">
+        <div class="split-section">
+            <div class="text-block">
+                <h2 lang="en">Don't Replace It. <span class="highlight">Fix It.</span></h2>
+                <h2 lang="nl">Niet Vervangen. <span class="highlight">Herstellen.</span></h2>
+                
+                <p lang="en">Most shops just swap parts. We find the specific failing component and replace it, saving you hundreds of dollars.</p>
+                <p lang="nl">De meeste winkels vervangen alleen onderdelen. Wij vinden het specifieke defecte component en vervangen dit, waardoor u honderden euro's bespaart.</p>
+            </div>
+            <div class="icon-block">
+                <i class="fa-solid fa-microscope"></i>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="container">
+        <h2 class="section-title">
+            <span lang="en">The Proof is in the <span class="highlight">Repair</span></span>
+            <span lang="nl">Het Bewijs is de <span class="highlight">Reparatie</span></span>
+        </h2>
+        <div class="before-after-container">
+            <div class="img-after">
+                <img src="https://via.placeholder.com/800x450/141418/00ffcc?text=After" alt="After">
+                <span class="label label-after">After</span>
+            </div>
+            <div class="img-before" id="img-before">
+                <img src="https://via.placeholder.com/800x450/050506/94949e?text=Before" alt="Before">
+                <span class="label label-before">Before</span>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="slider" id="ba-slider">
+            <div class="slider-button" id="slider-button"><i class="fa-solid fa-arrows-left-right"></i></div>
+        </div>
+    </section>
+
+    <section id="services" class="bg-darker">
+        <div class="container">
+            <h2 class="section-title"><span lang="en">Our Capabilities</span><span lang="nl">Onze Diensten</span></h2>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="fa-solid fa-mobile-screen-button card-icon"></i>
+                    <h3 lang="en">Smartphones</h3><h3 lang="nl">Smartphones</h3>
+                    <p lang="en">Screens, batteries, and charging ports.</p>
+                    <p lang="nl">Schermen, batterijen en oplaadpoorten.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-laptop card-icon"></i>
+                    <h3 lang="en">Laptops</h3><h3 lang="nl">Laptops</h3>
+                    <p lang="en">Liquid damage and keyboard repair.</p>
+                    <p lang="nl">Waterschade en toetsenbord reparatie.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-microchip card-icon"></i>
+                    <h3 lang="en">Micro-Soldering</h3><h3 lang="nl">Micro-Solderen</h3>
+                    <p lang="en">Motherboard board-level repair.</p>
+                    <p lang="nl">Reparatie op moederbordniveau.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="container">
+        <h2 class="section-title">FAQ</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h3 lang="en">How long does it take?</h3><h3 lang="nl">Hoe lang duurt het?</h3>
+                <p lang="en">Phones: 1 hour. Board repairs: 2-5 days.</p>
+                <p lang="nl">Telefoons: 1 uur. Moederbord: 2-5 dagen.</p>
+            </div>
+            <div class="faq-item">
+                <h3 lang="en">No-Fix, No-Fee?</h3><h3 lang="nl">No-Cure, No-Pay?</h3>
+                <p lang="en">If we can't fix it, you don't pay for labor.</p>
+                <p lang="nl">Als we het niet kunnen maken, betaal je niets.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-darker">
+        <div class="container text-center">
+            <h2 lang="en">Ready to revive your hardware?</h2>
+            <h2 lang="nl">Klaar om je hardware te herstellen?</h2>
+            <a href="mailto:m.anasdalou@gmail.com" class="btn-primary mt-2">
+                <span lang="en">Email Me For A Quote</span>
+                <span lang="nl">Mail voor een Offerte</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Anas Repair & Services. <span lang="en">All rights reserved.</span><span lang="nl">Alle rechten voorbehouden.</span></p>
+    </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slider = document.getElementById('ba-slider');
+        const beforeImage = document.getElementById('img-before');
+        const sliderButton = document.getElementById('slider-button');
+        if(slider) {
+            slider.addEventListener('input', (e) => {
+                const sliderPos = e.target.value;
+                beforeImage.style.width = `${sliderPos}%`;
+                sliderButton.style.left = `${sliderPos}%`;
+            });
+        }
+    });
+
+    function setLanguage(lang) {
+        // This is the "Professional" way. We just tag the whole body.
+        document.body.setAttribute('data-lang', lang);
+        
+        // Update button styles
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        document.getElementById('btn-nl').classList.toggle('active', lang === 'nl');
+    }
+</script>
+</body>
+</html>
