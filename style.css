@@ -521,3 +521,50 @@ body:not([data-lang]) [lang="nl"] { display: none !important; }
 
 /* Ensure the buttons themselves never hide */
 .lang-switch button[lang] { display: inline-block !important; }
+
+/* --- Floating Social Bar --- */
+.social-contact-bar {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1) translateY(-5px);
+}
+
+/* Official Brand Colors */
+.whatsapp { background-color: #25D366; box-shadow: 0 0 15px rgba(37, 211, 102, 0.4); }
+.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); box-shadow: 0 0 15px rgba(220, 39, 67, 0.4); }
+.snapchat { background-color: #FFFC00; color: black; box-shadow: 0 0 15px rgba(255, 252, 0, 0.4); }
+
+/* Make them smaller on mobile so they don't block content */
+@media (max-width: 600px) {
+    .social-contact-bar {
+        bottom: 15px;
+        right: 15px;
+        gap: 10px;
+    }
+    .social-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
+    }
+}
