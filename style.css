@@ -60,42 +60,42 @@ a {
     margin-top: 2rem;
 }
 
+
 /* --- Navigation --- */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
+    padding: 10px 5%; /* Reduced padding slightly for better fit */
     background-color: rgba(10, 10, 12, 0.95);
     backdrop-filter: blur(10px);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 255, 204, 0.1);
+    border-bottom: 1px solid rgba(0, 123, 255, 0.1); /* Updated to Blue */
+    height: 70px; /* Fixed height for the whole nav bar */
 }
 
 .logo {
-    display: flex; /* Keeps the logo in line with the other items */
+    display: flex;
     align-items: center;
-    height: 45px; /* This is the most important part—it limits the height */
-    width: auto;
+    height: 100%; /* Spans the height of the nav */
+    max-width: 200px; /* Limits how wide the logo can get */
+    overflow: hidden;
 }
 
 .logo img {
-    height: 100%; /* Forces the image to stay inside the 45px limit[cite: 2] */
-    width: auto; /* Keeps the proportions so it's not squished[cite: 2] */
+    height: 45px; /* Manually force the image height */
+    width: auto;  /* Keep aspect ratio */
     display: block;
-}
-
-.logo span {
-    color: var(--accent-cyan);
+    object-fit: contain;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 20px;
     align-items: center;
 }
 
