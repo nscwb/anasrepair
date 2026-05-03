@@ -43,7 +43,7 @@ a {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 80px 20px;
 }
@@ -83,7 +83,7 @@ nav {
     align-items: center;
     justify-content: flex-start;
     /* This width is key: it's wide enough so 'Repairs' doesn't hit the right wall */
-    width: 400px; 
+    width: 380px; 
     height: 80px; 
     overflow: hidden; 
     position: relative;
