@@ -73,32 +73,36 @@ nav {
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 123, 255, 0.2);
-    height: 80px; /* Increased slightly for the new logo */
+    border-bottom: 1px solid rgba(0, 123, 255, 0.2); /* Matching blue border */
+    height: 80px; /* Kept the total nav height */
 }
 
-/* We are forcing the container to be small */
+/* Simplified logo container */
 .logo {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 320px; /* Plenty of room for the full name */
-    height: 80px;  
+    height: 100%; /* Spans the full height of the nav */
+    width: 350px; /* Keep this wide enough so the text has room */
     overflow: hidden; 
-    position: relative;
-    margin-left: -10px; /* Nudges the whole box slightly left for a cleaner look */
 }
 
+/* Force-sizing the image itself, much smaller this time */
 .logo img {
-    width: 600px;
-    height: auto;
-    position: absolute;
-    /* Reduced negative value to nudge the logo right */
-    left: -130px; 
-    top: 50%;
-    transform: translateY(-50%);
+    height: 70px; /* This is the new master size: smaller and safe */
+    width: auto; /* Keeps the aspect ratio perfect */
+    display: block;
+    
+    /* We no longer need 'absolute' positioning or 'left: -130px' */
+    
+    /* Nudges the logo slightly right from the extreme edge */
+    margin-left: 5px; 
+    
+    /* Kept the cool electric blue glow effect */
+    filter: drop-shadow(0 0 10px var(--accent-glow));
+    
+    /* Object-fit must be here to match standard practice with flexbox */
     object-fit: contain;
-    filter: drop-shadow(0 0 8px var(--accent-glow));
 }
 
 .nav-links {
