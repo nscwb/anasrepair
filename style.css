@@ -76,16 +76,15 @@ nav {
 }
 
 .logo {
-    display: flex; /* Keeps it aligned with the other nav items */
+    display: flex; /* Keeps the logo in line with the other items */
     align-items: center;
-    height: 40px; /* This is the "Master Height" - adjust this to resize */
+    height: 45px; /* This is the most important part—it limits the height */
     width: auto;
-    text-decoration: none;
 }
 
 .logo img {
-    height: 100%; /* Forces the image to never be taller than the 40px container */
-    width: auto;   /* Keeps the aspect ratio perfect so it doesn't look squished[cite: 2] */
+    height: 100%; /* Forces the image to stay inside the 45px limit[cite: 2] */
+    width: auto; /* Keeps the proportions so it's not squished[cite: 2] */
     display: block;
 }
 
