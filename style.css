@@ -66,30 +66,35 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 5%; /* Reduced padding slightly for better fit */
+    padding: 0 5%; 
     background-color: rgba(10, 10, 12, 0.95);
     backdrop-filter: blur(10px);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 123, 255, 0.1); /* Updated to Blue */
-    height: 70px; /* Fixed height for the whole nav bar */
+    border-bottom: 1px solid rgba(0, 123, 255, 0.2);
+    height: 80px; /* Increased slightly for the new logo */
 }
 
+/* We are forcing the container to be small */
 .logo {
     display: flex;
     align-items: center;
-    height: 100%; /* Spans the height of the nav */
-    max-width: 200px; /* Limits how wide the logo can get */
+    justify-content: flex-start;
+    width: 180px; /* Hard limit on width */
+    height: 60px;  /* Hard limit on height */
     overflow: hidden;
 }
 
+/* We are forcing the image to fit that container */
 .logo img {
-    height: 45px; /* Manually force the image height */
-    width: auto;  /* Keep aspect ratio */
+    max-height: 100%; 
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Keeps it from stretching */
     display: block;
-    object-fit: contain;
 }
 
 .nav-links {
