@@ -82,20 +82,20 @@ nav {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 350px; /* Increased width so "Repairs" doesn't get cut off */
+    width: 320px; /* Plenty of room for the full name */
     height: 80px;  
     overflow: hidden; 
     position: relative;
+    margin-left: -10px; /* Nudges the whole box slightly left for a cleaner look */
 }
 
 .logo img {
-    /* Keeping the image large so it's readable */
-    width: 650px; 
+    width: 600px; /* Slightly smaller scale for better control */
     height: auto;
     
-    /* Sliding it further left to make sure the whole name fits */
     position: absolute;
-    left: -190px; /* Moved from -165 to -190 to center it better[cite: 2] */
+    /* This is the magic number: -145px pulls the D back into view */
+    left: -145px; 
     top: 50%;
     transform: translateY(-50%); 
     
