@@ -135,17 +135,67 @@
         </div>
     </section>
 
-    <section id="contact" class="bg-darker">
-        <div class="container text-center">
-            <h2 lang="en">Ready to revive your hardware?</h2>
-            <h2 lang="nl">Klaar om je hardware te herstellen?</h2>
-            <a href="mailto:anasrepairs@gmail.com
-" class="btn-primary mt-2">
-                <span lang="en">Email Me For A Quote</span>
-                <span lang="nl">Mail voor een Offerte</span>
-            </a>
+    <!-- REPAIR INTAKE SECTION -->
+<section id="contact" class="bg-darker">
+    <div class="container">
+        <div class="repair-intake-card">
+            <h2 class="section-title">
+                <span lang="en">Book Your <span class="highlight">Repair</span></span>
+                <span lang="nl">Meld je <span class="highlight">Reparatie</span> aan</span>
+            </h2>
+            
+            <form id="repairForm" action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
+                <!-- STEP 1: DEVICE TYPE -->
+                <div class="form-step">
+                    <label lang="en">1. Select Device</label>
+                    <label lang="nl">1. Selecteer Apparaat</label>
+                    <div class="device-grid">
+                        <input type="radio" name="device" value="smartphone" id="dev1" required>
+                        <label for="dev1" class="device-box"><i class="fa-solid fa-mobile-screen"></i> <span>Smartphone</span></label>
+                        
+                        <input type="radio" name="device" value="laptop" id="dev2">
+                        <label for="dev2" class="device-box"><i class="fa-solid fa-laptop"></i> <span>Laptop</span></label>
+                        
+                        <input type="radio" name="device" value="gpu" id="dev3">
+                        <label for="dev3" class="device-box"><i class="fa-solid fa-microchip"></i> <span>GPU / Console</span></label>
+                    </div>
+                </div>
+
+                <!-- STEP 2: DETAILS -->
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label lang="en">Model & Brand</label><label lang="nl">Merk & Model</label>
+                        <input type="text" name="model" placeholder="e.g. iPhone 15 Pro / RTX 3080" required>
+                    </div>
+                    <div class="form-group">
+                        <label lang="en">Problem</label><label lang="nl">Probleem</label>
+                        <select name="issue" required>
+                            <option value="screen" lang="en">Screen Repair</option>
+                            <option value="screen" lang="nl">Scherm Reparatie</option>
+                            <option value="power" lang="en">Power / No Boot</option>
+                            <option value="power" lang="nl">Start niet op</option>
+                            <option value="liquid" lang="en">Liquid Damage</option>
+                            <option value="liquid" lang="nl">Waterschade</option>
+                            <option value="other" lang="en">Other / Soldering</option>
+                            <option value="other" lang="nl">Anders / Solderen</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- STEP 3: CONTACT -->
+                <div class="form-group">
+                    <label lang="en">Your Email</label><label lang="nl">Je E-mailadres</label>
+                    <input type="email" name="email" placeholder="example@email.com" required>
+                </div>
+
+                <button type="submit" class="btn-primary w-100 mt-2">
+                    <span lang="en">Get My Quote & Ticket ID</span>
+                    <span lang="nl">Ontvang Offerte & Ticket ID</span>
+                </button>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
 
 <div class="social-contact-bar">
     <a href="https://wa.me/31642399291" target="_blank" class="social-icon whatsapp" title="WhatsApp Us">
