@@ -82,25 +82,25 @@ nav {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 220px; /* Limits the horizontal space for the logo area */
-    height: 80px;  /* Matches your nav height */
-    overflow: hidden; /* This is the "frame" that crops the image */
+    width: 350px; /* Increased width so "Repairs" doesn't get cut off */
+    height: 80px;  
+    overflow: hidden; 
     position: relative;
 }
 
 .logo img {
-    /* We make the image huge so the text inside becomes readable */
-    width: 550px; 
+    /* Keeping the image large so it's readable */
+    width: 650px; 
     height: auto;
     
-    /* These coordinates move the 'useful' part of the image into the frame */
+    /* Sliding it further left to make sure the whole name fits */
     position: absolute;
-    left: -165px; /* Pulls the image left to hide the empty left gap[cite: 2] */
+    left: -190px; /* Moved from -165 to -190 to center it better[cite: 2] */
     top: 50%;
     transform: translateY(-50%); 
     
     object-fit: contain;
-    filter: drop-shadow(0 0 5px var(--accent-glow)); /* Adds a slight glow to make it pop[cite: 2] */
+    filter: drop-shadow(0 0 8px var(--accent-glow)); 
 }
 
 .nav-links {
