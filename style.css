@@ -5,8 +5,8 @@
     --bg-darker: #050506;
     --text-main: #e0e0e0;
     --text-muted: #94949e;
-    --accent-cyan: #00ffcc;
-    --accent-glow: rgba(0, 255, 204, 0.4);
+    --accent-cyan: #007bff; /* This matches the "D" in your logo better[cite: 2] */
+    --accent-glow: rgba(0, 123, 255, 0.4);
     
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Inter', sans-serif;
@@ -82,19 +82,24 @@ nav {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 250px; /* Increased from 180px to give it more horizontal room */
-    height: 100px; /* Increased from 60px to allow it to be much taller */
+    width: 280px; /* Increased to give the "zoomed" image room to breathe */
+    height: 80px;  /* Matches the nav bar height */
     overflow: hidden;
+    position: relative;
 }
 
 .logo img {
-    height: 160%; /* We are "over-scaling" it to crop out some of that empty space */
-    width: auto;
+    /* We ignore the height and force a massive width to make the text visible */
+    width: 600px; 
+    height: auto;
+    
+    /* This moves the image to hide the empty space on the left and top */
+    position: absolute;
+    left: -150px; /* Adjust this number to slide the logo left or right */
+    top: 50%;
+    transform: translateY(-50%); 
+    
     object-fit: contain;
-    display: block;
-    /* This moves the image slightly left/up if the empty space is off-center */
-    transform: scale(1.8); 
-    transform-origin: left center;
 }
 
 .nav-links {
