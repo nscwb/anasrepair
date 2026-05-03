@@ -5,7 +5,7 @@
     --bg-darker: #050506;
     --text-main: #e0e0e0;
     --text-muted: #94949e;
-    --accent-cyan: #007bff; /* This matches the "D" in your logo better[cite: 2] */
+    --accent-cyan: #0084ff; /* A vibrant Electric Blue to match D-Repairs[cite: 2] */
     --accent-glow: rgba(0, 123, 255, 0.4);
     
     --font-heading: 'Montserrat', sans-serif;
@@ -82,24 +82,25 @@ nav {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 280px; /* Increased to give the "zoomed" image room to breathe */
-    height: 80px;  /* Matches the nav bar height */
-    overflow: hidden;
+    width: 220px; /* Limits the horizontal space for the logo area */
+    height: 80px;  /* Matches your nav height */
+    overflow: hidden; /* This is the "frame" that crops the image */
     position: relative;
 }
 
 .logo img {
-    /* We ignore the height and force a massive width to make the text visible */
-    width: 600px; 
+    /* We make the image huge so the text inside becomes readable */
+    width: 550px; 
     height: auto;
     
-    /* This moves the image to hide the empty space on the left and top */
+    /* These coordinates move the 'useful' part of the image into the frame */
     position: absolute;
-    left: -150px; /* Adjust this number to slide the logo left or right */
+    left: -165px; /* Pulls the image left to hide the empty left gap[cite: 2] */
     top: 50%;
     transform: translateY(-50%); 
     
     object-fit: contain;
+    filter: drop-shadow(0 0 5px var(--accent-glow)); /* Adds a slight glow to make it pop[cite: 2] */
 }
 
 .nav-links {
