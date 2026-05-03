@@ -82,27 +82,26 @@ nav {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    height: 100%; /* Spans the full height of the nav */
-    width: 350px; /* Keep this wide enough so the text has room */
+    /* This width is key: it's wide enough so 'Repairs' doesn't hit the right wall */
+    width: 400px; 
+    height: 80px; 
     overflow: hidden; 
+    position: relative;
 }
 
-/* Force-sizing the image itself, much smaller this time */
 .logo img {
-    height: 70px; /* This is the new master size: smaller and safe */
-    width: auto; /* Keeps the aspect ratio perfect */
-    display: block;
+    /* We make the file huge so the tiny text inside becomes large */
+    width: 750px; 
+    height: auto;
     
-    /* We no longer need 'absolute' positioning or 'left: -130px' */
+    position: absolute;
+    /* This number pulls the 'D' into view without cutting it off */
+    left: -170px; 
+    top: 50%;
+    transform: translateY(-50%); 
     
-    /* Nudges the logo slightly right from the extreme edge */
-    margin-left: 5px; 
-    
-    /* Kept the cool electric blue glow effect */
-    filter: drop-shadow(0 0 10px var(--accent-glow));
-    
-    /* Object-fit must be here to match standard practice with flexbox */
     object-fit: contain;
+    filter: drop-shadow(0 0 8px var(--accent-glow));
 }
 
 .nav-links {
