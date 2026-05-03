@@ -90,17 +90,15 @@ nav {
 }
 
 .logo img {
-    width: 600px; /* Slightly smaller scale for better control */
+    width: 600px;
     height: auto;
-    
     position: absolute;
-    /* This is the magic number: -145px pulls the D back into view */
-    left: -145px; 
+    /* Reduced negative value to nudge the logo right */
+    left: -130px; 
     top: 50%;
-    transform: translateY(-50%); 
-    
+    transform: translateY(-50%);
     object-fit: contain;
-    filter: drop-shadow(0 0 8px var(--accent-glow)); 
+    filter: drop-shadow(0 0 8px var(--accent-glow));
 }
 
 .nav-links {
