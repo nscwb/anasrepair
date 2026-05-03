@@ -76,10 +76,17 @@ nav {
 }
 
 .logo {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: 1px;
+    display: flex; /* Keeps it aligned with the other nav items */
+    align-items: center;
+    height: 40px; /* This is the "Master Height" - adjust this to resize */
+    width: auto;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 100%; /* Forces the image to never be taller than the 40px container */
+    width: auto;   /* Keeps the aspect ratio perfect so it doesn't look squished[cite: 2] */
+    display: block;
 }
 
 .logo span {
