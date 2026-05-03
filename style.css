@@ -504,8 +504,9 @@ footer {
 
 .lang-switch {
     display: flex;
-    gap: 5px;
-    margin-right: 20px;
+    gap: 8px;
+    margin: 0 25px; /* Added more space on the sides */
+    flex-shrink: 0; /* Prevents the buttons from getting squashed */
 }
 .lang-switch button {
     background: transparent;
