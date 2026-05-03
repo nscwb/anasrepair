@@ -587,3 +587,64 @@ body:not([data-lang]) [lang="nl"] { display: none !important; }
         font-size: 1.5rem;
     }
 }
+
+/* --- Repair Intake Styling --- */
+.repair-intake-card {
+    background: var(--bg-card);
+    padding: 50px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 132, 255, 0.2);
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.device-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0 30px;
+}
+
+/* Hide the actual radio circle */
+.device-grid input[type="radio"] { display: none; }
+
+.device-box {
+    background: var(--bg-main);
+    border: 2px solid #2a2a2e;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.device-box i { font-size: 2rem; display: block; margin-bottom: 10px; color: var(--text-muted); }
+
+/* When selected */
+.device-grid input[type="radio"]:checked + .device-box {
+    border-color: var(--accent-cyan);
+    background: rgba(0, 132, 255, 0.1);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+.device-grid input[type="radio"]:checked + .device-box i { color: var(--accent-cyan); }
+
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--accent-cyan); }
+
+input[type="text"], input[type="email"], select {
+    width: 100%;
+    padding: 12px;
+    background: var(--bg-main);
+    border: 1px solid #2a2a2e;
+    color: white;
+    border-radius: 4px;
+}
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.w-100 { width: 100%; cursor: pointer; border: none; }
+
+@media (max-width: 600px) {
+    .device-grid, .grid-2 { grid-template-columns: 1fr; }
+    .repair-intake-card { padding: 25px; }
+}
