@@ -541,29 +541,33 @@ input[type="text"], input[type="email"], select {
     .repair-intake-card { padding: 25px; }
 }
 
-/* --- Static Portfolio Grid --- */
+/* --- Fixed Static Portfolio Grid --- */
 .static-portfolio-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
     max-width: 900px;
     margin: 0 auto;
 }
 
 .portfolio-card {
     position: relative;
-    border-radius: 8px;
+    width: 320px;            /* Keeps card width tight */
+    height: 420px;           /* Sets a nice fixed height */
+    border-radius: 12px;
     overflow: hidden;
     border: 1px solid rgba(0, 132, 255, 0.3);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    height: 350px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
     background: var(--bg-card);
+    flex: 0 0 auto;          /* Prevents shrinking */
 }
 
 .portfolio-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;       /* Crops excess height so it fits the frame perfectly */
+    object-position: center;
     display: block;
 }
 
@@ -591,11 +595,15 @@ input[type="text"], input[type="email"], select {
     color: white;
 }
 
+/* Mobile responsive tweak */
 @media (max-width: 768px) {
     .static-portfolio-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        gap: 20px;
     }
     .portfolio-card {
-        height: 250px;
+        width: 100%;
+        max-width: 350px;
+        height: 380px;
     }
 }
