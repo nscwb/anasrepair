@@ -754,3 +754,6 @@ input[type="text"], input[type="email"], select {
     font-size: 0.95rem;
     line-height: 1.6;
 }
+
+html[lang="en"] [lang="nl"] { display: none !important; }
+html[lang="nl"] [lang="en"] { display: none !important; }
