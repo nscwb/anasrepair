@@ -5,7 +5,7 @@
     --bg-darker: #050506;
     --text-main: #e0e0e0;
     --text-muted: #94949e;
-    --accent-cyan: #0084ff; /* A vibrant Electric Blue to match D-Repairs[cite: 2] */
+    --accent-cyan: #0084ff; /* A vibrant Electric Blue to match D-Repairs */
     --accent-glow: rgba(0, 123, 255, 0.4);
     
     --font-heading: 'Montserrat', sans-serif;
@@ -300,158 +300,25 @@ footer {
     font-size: 0.9rem;
 }
 
-/* --- Responsive Design (Mobile & Tablet) --- */
-@media (max-width: 900px) {
-    .split-section {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .grid-3, .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none; /* A hamburger menu would go here for a complex site, but we keep it simple */
-    }
-    
-    #hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .grid-3, .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .icon-block i {
-        font-size: 8rem;
-    }
-}
-
-/* --- Before & After Slider --- */
-.before-after-container {
+/* --- Portfolio Showcase Box --- */
+.portfolio-showcase {
     position: relative;
     width: 100%;
     max-width: 800px;
-    height: 450px; /* Adjust this based on your image aspect ratio */
+    height: 450px;
     margin: 0 auto;
-    border: 1px solid rgba(0, 255, 204, 0.3);
+    border: 1px solid rgba(0, 132, 255, 0.3);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background: var(--bg-card);
 }
 
-/* Base styling for both images */
-.before-after-container img {
+.portfolio-showcase img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center; /* Fixed line: forces image contents to align dead-center */
-    position: absolute;      /* Fixed line: anchors images relative to container */
-    top: 0;
-    left: 0;
-    pointer-events: none;    /* Prevents images from blocking the slider */
-}
-
-/* The 'Before' image container that gets resized */
-.img-before, .img-after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; 
-    height: 100%;
-    overflow: hidden;
-    z-index: 2;
-}
-
-.img-before {
-    border-right: 2px solid var(--accent-cyan);
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
-}
-
-/* The invisible input range overlaid on top */
-.slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    outline: none;
-    background: transparent;
-    -webkit-appearance: none;
-    appearance: none;
-    z-index: 4;
-    margin: 0;
-    cursor: ew-resize;
-}
-
-/* Hide the default HTML range thumb */
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 4px;
-    height: 100%;
-    background: transparent;
-}
-.slider::-moz-range-thumb {
-    width: 4px;
-    height: 100%;
-    background: transparent;
-    border: none;
-}
-
-/* The visual custom handle (the circle with arrows) */
-.slider-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    background: var(--bg-main);
-    border: 2px solid var(--accent-cyan);
-    border-radius: 50%;
-    color: var(--accent-cyan);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none; /* Lets clicks pass through to the invisible slider */
-    z-index: 3;
-    box-shadow: 0 0 15px var(--accent-glow);
-}
-
-/* Labels ("Before" & "After") */
-.label {
-    position: absolute;
-    bottom: 20px;
-    padding: 6px 16px;
-    background: rgba(10, 10, 12, 0.85);
-    color: #fff;
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border-radius: 4px;
-    z-index: 3;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(4px);
-}
-
-.label-before {
-    left: 20px;
-}
-
-.label-after {
-    right: 20px;
-}
-
-/* Mobile Adjustment for the slider height */
-@media (max-width: 768px) {
-    .before-after-container {
-        height: 250px;
-    }
+    object-position: center;
 }
 
 /* --- Trust Bar Styling --- */
@@ -477,14 +344,6 @@ footer {
     margin-right: 8px;
 }
 
-/* Make it pop on mobile */
-@media (max-width: 768px) {
-    .trust-items {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
 /* --- FAQ Styling --- */
 .faq-grid {
     display: grid;
@@ -505,12 +364,6 @@ footer {
     color: var(--text-muted);
     font-size: 0.95rem;
     padding-left: 18px;
-}
-
-@media (max-width: 600px) {
-    .faq-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 .lang-switch {
@@ -534,15 +387,10 @@ footer {
     color: var(--bg-main);
 }
 
-/* --- THE NEW LOGIC (Add this below the buttons) --- */
-/* This hides the wrong language based on the body tag */
+/* --- Language Switching Logic --- */
 body[data-lang="en"] [lang="nl"] { display: none !important; }
 body[data-lang="nl"] [lang="en"] { display: none !important; }
-
-/* Default: If no language is set yet, hide Dutch */
 body:not([data-lang]) [lang="nl"] { display: none !important; }
-
-/* Ensure the buttons themselves never hide */
 .lang-switch button[lang] { display: inline-block !important; }
 
 /* --- Floating Social Bar --- */
@@ -577,20 +425,6 @@ body:not([data-lang]) [lang="nl"] { display: none !important; }
 .whatsapp { background-color: #25D366; box-shadow: 0 0 15px rgba(37, 211, 102, 0.4); }
 .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); box-shadow: 0 0 15px rgba(220, 39, 67, 0.4); }
 .snapchat { background-color: #FFFC00; color: black; box-shadow: 0 0 15px rgba(255, 252, 0, 0.4); }
-
-/* Make them smaller on mobile so they don't block content */
-@media (max-width: 600px) {
-    .social-contact-bar {
-        bottom: 15px;
-        right: 15px;
-        gap: 10px;
-    }
-    .social-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 1.5rem;
-    }
-}
 
 /* --- Repair Intake Styling --- */
 .repair-intake-card {
@@ -648,7 +482,61 @@ input[type="text"], input[type="email"], select {
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .w-100 { width: 100%; cursor: pointer; border: none; }
 
+/* --- Responsive Design (Mobile & Tablet) --- */
+@media (max-width: 900px) {
+    .split-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .grid-3, .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .grid-3, .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .icon-block i {
+        font-size: 8rem;
+    }
+
+    .portfolio-showcase {
+        height: 250px;
+    }
+
+    .trust-items {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
 @media (max-width: 600px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-contact-bar {
+        bottom: 15px;
+        right: 15px;
+        gap: 10px;
+    }
+    .social-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
+    }
+
     .device-grid, .grid-2 { grid-template-columns: 1fr; }
     .repair-intake-card { padding: 25px; }
 }
