@@ -470,3 +470,104 @@ html[lang="nl"] [lang="en"] {
         height: 320px;
     }
 }
+
+
+/* --- Repair Intake Form Section --- */
+.repair-intake-section {
+    padding: 80px 0;
+    background: var(--bg-darker);
+    border-top: 1px solid rgba(0, 132, 255, 0.2);
+}
+
+.repair-intake-card {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 132, 255, 0.3);
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.device-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0 30px;
+}
+
+.device-grid input[type="radio"] { 
+    display: none; 
+}
+
+.device-box {
+    background: var(--bg-main);
+    border: 2px solid #2a2a2e;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: var(--text-muted);
+}
+
+.device-box span {
+    display: block;
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.device-grid input[type="radio"]:checked + .device-box {
+    border-color: var(--accent-cyan);
+    background: rgba(0, 132, 255, 0.1);
+    box-shadow: 0 0 15px var(--accent-glow);
+    color: #fff;
+}
+
+.form-group { 
+    margin-bottom: 20px; 
+    text-align: left; 
+}
+
+.form-group label { 
+    display: block; 
+    margin-bottom: 8px; 
+    font-weight: 600; 
+    color: var(--accent-cyan); 
+    font-size: 0.95rem;
+}
+
+.form-group input, 
+.form-group textarea, 
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    background: var(--bg-main);
+    border: 1px solid #2a2a2e;
+    color: white;
+    border-radius: 6px;
+    font-family: var(--font-body);
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: var(--accent-cyan);
+    outline: none;
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.form-grid-2 { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+}
+
+@media (max-width: 768px) {
+    .device-grid, .form-grid-2 { 
+        grid-template-columns: 1fr; 
+    }
+    .repair-intake-card { 
+        padding: 20px; 
+    }
+}
