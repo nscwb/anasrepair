@@ -78,25 +78,24 @@ nav {
 }
 
 /* Simplified logo container */
+/* Cleaned up logo container with proper breathing room */
 .logo {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    /* This width is key: it's wide enough so 'Repairs' doesn't hit the right wall */
-    width: 380px; 
+    width: 260px;          /* Tighter container width */
     height: 80px; 
     overflow: hidden; 
     position: relative;
 }
 
 .logo img {
-    /* We make the file huge so the tiny text inside becomes large */
-    width: 660px; 
+    /* Scaled down image so it doesn't touch the top or bottom edge */
+    width: 440px; 
     height: auto;
     
     position: absolute;
-    /* This number pulls the 'D' into view without cutting it off */
-    left: -150px; 
+    left: -90px;           /* Aligns the icon cleanly on the left */
     top: 50%;
     transform: translateY(-50%); 
     
