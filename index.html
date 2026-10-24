@@ -79,17 +79,8 @@
             <span lang="en">The Proof is in the <span class="highlight">Repair</span></span>
             <span lang="nl">Het Bewijs is de <span class="highlight">Reparatie</span></span>
         </h2>
-        <div class="before-after-container">
-            <div class="img-after">
-                <img src="phone cracked.jpg.jpeg" alt="After">
-                <span class="label label-after">After</span>
-            </div>
-            <div class="img-before" id="img-before">
-                <img src="Phone fixed.jpg.jpeg" alt="Before">
-                <span class="label label-before">Before</span>
-            </div>
-            <input type="range" min="0" max="100" value="50" class="slider" id="ba-slider">
-            <div class="slider-button" id="slider-button"><i class="fa-solid fa-arrows-left-right"></i></div>
+        <div class="portfolio-showcase">
+            <img src="Phone fixed.jpg.jpeg" alt="Precision Repair Showcase">
         </div>
     </section>
 
@@ -216,24 +207,8 @@
     </footer>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const slider = document.getElementById('ba-slider');
-        const beforeImage = document.getElementById('img-before');
-        const sliderButton = document.getElementById('slider-button');
-        if(slider) {
-            slider.addEventListener('input', (e) => {
-                const sliderPos = e.target.value;
-                beforeImage.style.width = `${sliderPos}%`;
-                sliderButton.style.left = `${sliderPos}%`;
-            });
-        }
-    });
-
     function setLanguage(lang) {
-        // This is the "Professional" way. We just tag the whole body.
         document.body.setAttribute('data-lang', lang);
-        
-        // Update button styles
         document.getElementById('btn-en').classList.toggle('active', lang === 'en');
         document.getElementById('btn-nl').classList.toggle('active', lang === 'nl');
     }
