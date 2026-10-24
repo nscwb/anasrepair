@@ -189,8 +189,84 @@
         </div>
     </section>
 
+    <!-- REPAIR QUOTE / INTAKE SECTION (Targeted by #contact) -->
+    <section id="contact" class="repair-intake-section" style="padding: 80px 0; background: var(--bg-darker); border-top: 1px solid rgba(0, 132, 255, 0.2);">
+        <div class="container">
+            <h2 class="section-title">
+                <span lang="en">Request a Free <span class="highlight">Quote</span></span>
+                <span lang="nl">Vraag een Gratis <span class="highlight">Offerte</span> Aan</span>
+            </h2>
+            
+            <div class="repair-intake-card">
+                <form action="#" method="POST">
+                    
+                    <div class="form-group">
+                        <label>
+                            <span lang="en">Select Your Device Type:</span>
+                            <span lang="nl">Selecteer je apparaat:</span>
+                        </label>
+                    </div>
+
+                    <div class="device-grid">
+                        <label>
+                            <input type="radio" name="device" value="Smartphone" checked>
+                            <div class="device-box">
+                                <span style="font-size: 1.5rem;">📱</span>
+                                <span style="display:block; margin-top:8px; font-weight:600; font-size:0.9rem;">Smartphone</span>
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="device" value="Console">
+                            <div class="device-box">
+                                <span style="font-size: 1.5rem;">🎮</span>
+                                <span style="display:block; margin-top:8px; font-weight:600; font-size:0.9rem;">Console</span>
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="device" value="Micro-Soldering">
+                            <div class="device-box">
+                                <span style="font-size: 1.5rem;">🔬</span>
+                                <span style="display:block; margin-top:8px; font-weight:600; font-size:0.9rem;">Micro-Soldering</span>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label>
+                                <span lang="en">Your Name</span>
+                                <span lang="nl">Je Naam</span>
+                            </label>
+                            <input type="text" name="name" required placeholder="Anas / Brigga">
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <span lang="en">Phone Number / WhatsApp</span>
+                                <span lang="nl">Telefoonnummer / WhatsApp</span>
+                            </label>
+                            <input type="text" name="phone" required placeholder="+31 6 ...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <span lang="en">Device Model & Issue Description</span>
+                            <span lang="nl">Apparaat Model & Probleem Omschrijving</span>
+                        </label>
+                        <textarea name="message" rows="4" required placeholder="e.g. iPhone 13 cracked screen / PS5 HDMI port broken..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100" style="width: 100%; border: none; cursor: pointer; margin-top: 10px;">
+                        <span lang="en">Send Repair Quote Request</span>
+                        <span lang="nl">Verstuur Offerte Aanvraag</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- FOOTER -->
-    <footer id="contact" class="footer">
+    <footer class="footer">
         <div class="container footer-content">
             <p>&copy; D-Repairs. All rights reserved.</p>
         </div>
